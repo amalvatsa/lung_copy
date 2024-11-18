@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .result-message {
+            font-size: 24px;
+            color: #2ecc71; /* Green for positive result */
+        }
+        .negative {
+            color: #e74c3c; /* Red for negative result */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prediction Result</h1>
+    <p class="result-message {% if result_message == 'Positive for Lung Cancer' %}positive{% else %}negative{% endif %}">
+        {{ result_message }}
+    </p>
+
+    <!-- Link to go back to try another prediction -->
+    <a href="{% url 'lung_cancer_form' %}">Try Another Prediction</a>
+
+</body>
+</html>

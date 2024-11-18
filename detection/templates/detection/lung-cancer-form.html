@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LungAI - Test Our Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+        .predict-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto 0;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fill Out The Form Based On The Report</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <select id="age" name="age" required>
+                        <option value="1">Below 50</option>
+                        <option value="2">50 or above</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="allergy">Allergy:</label>
+                    <select id="allergy" name="allergy" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="smoker">Smoker:</label>
+                    <select id="smoker" name="smoker" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="wheezing">Wheezing:</label>
+                    <select id="wheezing" name="wheezing" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="yellowFingers">Yellow Fingers:</label>
+                    <select id="yellowFingers" name="yellow_fingers" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alcoholConsumer">Alcohol Consumer:</label>
+                    <select id="alcoholConsumer" name="alcohol_consumer" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="anxiety">Anxiety:</label>
+                    <select id="anxiety" name="anxiety" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="coughing">Coughing:</label>
+                    <select id="coughing" name="coughing" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="peerPressure">Peer Pressure:</label>
+                    <select id="peerPressure" name="peer_pressure" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shortnessOfBreath">Shortness of Breath:</label>
+                    <select id="shortnessOfBreath" name="shortness_of_breath" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chronicDisease">Chronic Disease:</label>
+                    <select id="chronicDisease" name="chronic_disease" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="swallowingDifficulty">Swallowing Difficulty:</label>
+                    <select id="swallowingDifficulty" name="swallowing_difficulty" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fatigue">Fatigue:</label>
+                    <select id="fatigue" name="fatigue" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chestPain">Chest Pain:</label>
+                    <select id="chestPain" name="chestPain" required>
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="predict-btn">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
